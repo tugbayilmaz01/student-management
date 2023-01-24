@@ -1,8 +1,5 @@
-
 const PrimaryButton = () => {
-    return (
-       <button></button> 
-    );
-}
+  return <button>Add New Lecture</button>;
+};
 
 export default PrimaryButton;

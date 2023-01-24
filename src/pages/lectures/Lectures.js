@@ -1,9 +1,10 @@
 import PrimaryButton from "../../components/PrimaryButton";
+import Navbar from "../../components/Navbar";
 
 function Lectures() {
   return (
     <>
-      <div>selam</div>
+      <Navbar />
 
       <PrimaryButton />
     </>

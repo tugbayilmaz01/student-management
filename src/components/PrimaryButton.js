@@ -1,21 +1,12 @@
 import LectureModal from "./LectureModal";
 import React, { useState } from "react";
 
-const PrimaryButton = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-
+const PrimaryButton = (props) => {
   return (
     <div>
-      <button
-        className="openModalBtn"
-        onClick={() => {
-          setModalOpen(true);
-        }}
-      >
-        Add New Lecture
+      <button className="openModalBtn" onClick={props.handleClick}>
+        {props.text}
       </button>
-
-      {modalOpen && <LectureModal setOpenModal={setModalOpen} />}
     </div>
   );
 };

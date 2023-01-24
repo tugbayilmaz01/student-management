@@ -1,61 +1,41 @@
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 import React from "react";
 
-function LectureModal({ setOpenModal }) {
+function LectureModal(props) {
   return (
-    <div className="modalBackground">
-      <div className="modalContainer">
-        <div className="titleCloseBtn">
-          <button
-            onClick={() => {
-              setOpenModal(false);
-            }}
-          >
-            X
-          </button>
-        </div>
-        <div className="title">
-          <div className="lectureModal">
-            <label>Lecture ID</label>
-            <input
-              className="lectureInput"
-              type="text"
-              placeholder="CENG1907"
-              autoFocus
-            />
-          </div>
-          <div className="lectureModal">
-            <label>Lecture Name</label>
-            <input
-              className="lectureInput"
-              type="text"
-              placeholder="Web Development"
-              autoFocus
-            />
-          </div>
-          <div className="lectureModal">
-            <label>Teacher</label>
-            <input
-              className="lectureInput"
-              type="text"
-              placeholder="Bilmem Kim"
-              autoFocus
-            />
-          </div>
-
-          <div className="footer">
-            <button
-              onClick={() => {
-                setOpenModal(false);
-              }}
-              id="cancelBtn"
+    <>
+      <Modal show={true} onHide={props.handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                autoFocus
+              />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
             >
-              Cancel
-            </button>
-            <button id="cancelBtn">Continue</button>
-          </div>
-        </div>
-      </div>
-    </div>
+              <Form.Label>Example textarea</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={props.handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 }
 

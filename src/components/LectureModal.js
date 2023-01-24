@@ -1,51 +1,62 @@
-import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import Modal from "react-bootstrap/Modal";
+import React from "react";
 
-function Example() {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+function LectureModal({ setOpenModal }) {
   return (
-    <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button>
+    <div className="modalBackground">
+      <div className="modalContainer">
+        <div className="titleCloseBtn">
+          <button
+            onClick={() => {
+              setOpenModal(false);
+            }}
+          >
+            X
+          </button>
+        </div>
+        <div className="title">
+          <div className="lectureModal">
+            <label>Lecture ID</label>
+            <input
+              className="lectureInput"
+              type="text"
+              placeholder="CENG1907"
+              autoFocus
+            />
+          </div>
+          <div className="lectureModal">
+            <label>Lecture Name</label>
+            <input
+              className="lectureInput"
+              type="text"
+              placeholder="Web Development"
+              autoFocus
+            />
+          </div>
+          <div className="lectureModal">
+            <label>Teacher</label>
+            <input
+              className="lectureInput"
+              type="text"
+              placeholder="Bilmem Kim"
+              autoFocus
+            />
+          </div>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Lecture Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Web Development"
-                autoFocus
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Teacher</Form.Label>
-              <Form.Control type="text" placeholder="John Yılmaz" autoFocus />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </>
+          <div className="footer">
+            <button
+              onClick={() => {
+                setOpenModal(false);
+              }}
+              id="cancelBtn"
+            >
+              Cancel
+            </button>
+            <button id="cancelBtn">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
-render(<Example />);
+export default LectureModal;

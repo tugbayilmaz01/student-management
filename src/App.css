@@ -13,3 +13,42 @@ a:hover {
 .navbar {
   justify-content: space-between;
 }
+
+.title {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+
+.lectureModal {
+  display: flex;
+  margin: 0.2rem;
+}
+
+.lectureInput {
+  display: flex;
+}
+
+.title {
+  display: flex;
+  align-items: flex-end;
+}
+
+label {
+  display: flex;
+}
+
+#cancelBtn {
+  margin: 0.2rem;
+  border: 2.5px pink solid;
+  border-radius: 0.2rem;
+}
+
+#cancelBtn:hover {
+  color: palevioletred;
+}
+
+.footer {
+  display: flex;
+}

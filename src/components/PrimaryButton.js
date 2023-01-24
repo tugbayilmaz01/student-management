@@ -1,5 +1,23 @@
+import LectureModal from "./LectureModal";
+import React, { useState } from "react";
+
 const PrimaryButton = () => {
-  return <button>Add New Lecture</button>;
+  const [modalOpen, setModalOpen] = useState(false);
+
+  return (
+    <div>
+      <button
+        className="openModalBtn"
+        onClick={() => {
+          setModalOpen(true);
+        }}
+      >
+        Add New Lecture
+      </button>
+
+      {modalOpen && <LectureModal setOpenModal={setModalOpen} />}
+    </div>
+  );
 };
 
 export default PrimaryButton;

@@ -52,3 +52,17 @@ label {
 .footer {
   display: flex;
 }
+
+.openModalBtn {
+  margin: 2rem;
+  padding: 0.5rem;
+  width: 80%;
+  background-color: rgb(254, 253, 251);
+  border: 1px solid black;
+  border-radius: 0.2rem;
+}
+
+.openModalBtn:hover {
+  color: brown;
+  background-color: rgb(251, 206, 206);
+}

@@ -1,9 +1,26 @@
+import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import React from "react";
 
 function LectureModal(props) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleNewLecture();
+
+    let lectureofstudents = {
+      lectureID: event.target.lectureID.value,
+      lecturename: event.target.lecturename.value,
+    };
+
+    console.log(lectureofstudents);
+  };
+
+  const handleNewLecture = (lectureofstudents) => {
+    props.setLecture(lectureofstudents);
+  };
+
   return (
     <>
       <Modal show={true} onHide={props.handleClose}>
@@ -11,26 +28,39 @@ function LectureModal(props) {
           <Modal.Title>Add New Lecture</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Lecture ID</Form.Label>
-              <Form.Control type="text" placeholder="CENG1907" autoFocus />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Lecture Name</Form.Label>
-              <Form.Control
+          <form onSubmit={handleSubmit}>
+            <label>
+              Lecture ID
+              <input
                 type="text"
-                placeholder="Web Development"
-                autoFocus
+                id="lectureID"
+                name="lectureID"
+                placeholder="CENG1907"
               />
-            </Form.Group>
-          </Form>
+              <br />
+              <br />
+            </label>
+
+            <label>
+              Lecture Name
+              <input
+                type="text"
+                id="lecturename"
+                name="lectureame"
+                placeholder="Web Development"
+              />
+              <br />
+              <br />
+            </label>
+
+            <button className="submitbtn" type="submit">
+              Submit
+            </button>
+
+            <br />
+            <br />
+          </form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={props.handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );

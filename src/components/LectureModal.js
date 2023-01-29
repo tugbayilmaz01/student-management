@@ -28,37 +28,34 @@ function LectureModal(props) {
           <Modal.Title>Add New Lecture</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form onSubmit={handleSubmit}>
-            <label>
-              Lecture ID
-              <input
-                type="text"
-                id="lectureID"
-                name="lectureID"
-                placeholder="CENG1907"
-              />
-              <br />
-              <br />
-            </label>
+          <form className="lectureform" onSubmit={handleSubmit}>
+            <div>
+              <label>
+                Lecture ID
+                <input
+                  className="lectureinput"
+                  type="text"
+                  id="lectureID"
+                  name="lectureID"
+                  placeholder="CENG1907"
+                />
+              </label>
 
-            <label>
-              Lecture Name
-              <input
-                type="text"
-                id="lecturename"
-                name="lectureame"
-                placeholder="Web Development"
-              />
-              <br />
-              <br />
-            </label>
+              <label>
+                Lecture Name
+                <input
+                  className="lectureinput"
+                  type="text"
+                  id="lecturename"
+                  name="lectureame"
+                  placeholder="Web Development"
+                />
+              </label>
+            </div>
 
             <button className="submitbtn" type="submit">
               Submit
             </button>
-
-            <br />
-            <br />
           </form>
         </Modal.Body>
       </Modal>

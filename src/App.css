@@ -27,10 +27,6 @@ a:hover {
   margin: 0.2rem;
 }
 
-.lectureInput {
-  display: flex;
-}
-
 .title {
   display: flex;
   align-items: flex-end;
@@ -38,14 +34,12 @@ a:hover {
 
 label {
   display: flex;
-}
-
-.footer {
-  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 .openModalBtn {
-  margin: 2rem;
+  margin: auto 2 auto 2 !important;
   padding: 0.5rem;
   width: 80%;
   background-color: rgb(254, 253, 251);
@@ -59,7 +53,6 @@ label {
 }
 
 .submitbtn {
-  display: flex;
   padding: 0.5rem;
   border-radius: 0.2rem;
   border: 1px solid rgb(175, 168, 168);
@@ -68,4 +61,11 @@ label {
 
 .submitbtn:hover {
   background-color: rgb(220, 204, 204);
+}
+
+.lectureform {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  gap: 1.5rem;
 }

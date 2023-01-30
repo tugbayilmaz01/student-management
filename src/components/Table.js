@@ -1,4 +1,4 @@
-const Table = (lectures) => {
+const Table = (props) => {
   return (
     <table className="table">
       <thead>
@@ -8,7 +8,7 @@ const Table = (lectures) => {
         </tr>
       </thead>
       <tbody>
-        {Object.values(lectures).map((item, key) => {
+        {Object.values(props.lecture).map((item, key) => {
           return (
             <tr key={key}>
               <td>{item.lectureID}</td>

@@ -39,17 +39,16 @@ label {
 }
 
 .openModalBtn {
+  background-color: rgb(240, 230, 230);
   margin: auto 2 auto 2 !important;
   padding: 0.5rem;
   width: 80%;
-  background-color: rgb(254, 253, 251);
   border: 1px solid black;
   border-radius: 0.2rem;
 }
 
 .openModalBtn:hover {
-  color: brown;
-  background-color: rgb(240, 230, 230);
+  background-color: rgb(220, 204, 204);
 }
 
 .submitbtn {
@@ -68,4 +67,18 @@ label {
   flex-direction: column;
   align-items: space-between;
   gap: 1.5rem;
+}
+
+.table {
+  margin-top: 1rem;
+}
+
+.lecturebtn {
+  background-color: rgb(240, 230, 230);
+  border: 1px solid rgb(161, 153, 153);
+  border-radius: 0.1rem;
+}
+
+.lecturebtn:hover {
+  background-color: rgb(220, 204, 204);
 }

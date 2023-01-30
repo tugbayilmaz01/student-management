@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PrimaryButton from "../../components/PrimaryButton";
 import Navbar from "../../components/Navbar";
 import LectureModal from "../../components/LectureModal";
+import Table from "../../components/Table";
 
 function Lectures() {
   var lectures = [
@@ -22,15 +23,21 @@ function Lectures() {
   const handleClose = () => {
     setModalOpen(false);
   };
+  useEffect(() => {}, [lecture]);
 
   return (
     <>
       <Navbar />
       {modalOpen && (
-        <LectureModal handleClose={handleClose} setLecture={setLecture} />
+        <LectureModal
+          handleClose={handleClose}
+          setLecture={setLecture}
+          lecture={lecture}
+        />
       )}
 
       <PrimaryButton text="Add New Lecture" handleClick={handleClick} />
+      <Table />
     </>
   );
 }

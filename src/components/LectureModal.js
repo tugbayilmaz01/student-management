@@ -7,18 +7,17 @@ import React from "react";
 function LectureModal(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleNewLecture();
 
     let lectureofstudents = {
       lectureID: event.target.lectureID.value,
       lecturename: event.target.lecturename.value,
     };
 
-    console.log(lectureofstudents);
+    handleNewLecture(lectureofstudents);
   };
 
   const handleNewLecture = (lectureofstudents) => {
-    props.setLecture(lectureofstudents);
+    props.setLecture([...props.lecture, lectureofstudents]);
   };
 
   return (

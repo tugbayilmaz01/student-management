@@ -3,6 +3,7 @@ import PrimaryButton from "../../components/PrimaryButton";
 import Navbar from "../../components/Navbar";
 import LectureModal from "../../components/LectureModal";
 import Table from "../../components/Table";
+import LectureEditModal from "../../components/LectureEditModal";
 
 function Lectures() {
   var lectures = [
@@ -31,13 +32,6 @@ function Lectures() {
     setLecture(rows);
   };
 
-  const handleChange = (key, evnt) => {
-    const { name, value } = evnt.target;
-    const lectureofstudents = [...lecture];
-    lectureofstudents[key][name] = value;
-    setLecture(lectureofstudents);
-  };
-
   return (
     <>
       <Navbar />
@@ -53,7 +47,8 @@ function Lectures() {
       <Table
         lecture={lecture}
         deleteTableRows={deleteTableRows}
-        handleChange={handleChange}
+        setLecture={setLecture}
+        handleClose={handleClose}
       />
     </>
   );

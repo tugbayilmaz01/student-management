@@ -21,7 +21,12 @@ const Table = (props) => {
                 </button>
               </td>
               <td>
-                <button className="lecturebtn">Edit</button>{" "}
+                <button
+                  onChange={(evnt) => props.handleChange(key, evnt)}
+                  className="lecturebtn"
+                >
+                  Edit
+                </button>{" "}
               </td>
             </tr>
           );

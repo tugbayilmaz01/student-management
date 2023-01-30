@@ -31,6 +31,13 @@ function Lectures() {
     setLecture(rows);
   };
 
+  const handleChange = (key, evnt) => {
+    const { name, value } = evnt.target;
+    const lectureofstudents = [...lecture];
+    lectureofstudents[key][name] = value;
+    setLecture(lectureofstudents);
+  };
+
   return (
     <>
       <Navbar />
@@ -43,7 +50,11 @@ function Lectures() {
       )}
 
       <PrimaryButton text="Add New Lecture" handleClick={handleClick} />
-      <Table lecture={lecture} deleteTableRows={deleteTableRows} />
+      <Table
+        lecture={lecture}
+        deleteTableRows={deleteTableRows}
+        handleChange={handleChange}
+      />
     </>
   );
 }

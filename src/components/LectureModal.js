@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import React from "react";
@@ -14,6 +13,7 @@ function LectureModal(props) {
     };
 
     handleNewLecture(lectureofstudents);
+    window.location.reload();
   };
 
   const handleNewLecture = (lectureofstudents) => {

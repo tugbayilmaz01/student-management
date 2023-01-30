@@ -37,7 +37,7 @@ function Lectures() {
       )}
 
       <PrimaryButton text="Add New Lecture" handleClick={handleClick} />
-      <Table />
+      <Table lecture={lecture} />
     </>
   );
 }

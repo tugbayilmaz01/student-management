@@ -15,7 +15,10 @@ const Table = (props) => {
               <td>{item.lecturename}</td>
               <td>
                 {" "}
-                <button className="lecturebtn"> X</button>
+                <button onClick={props.deleteTableRows} className="lecturebtn">
+                  {" "}
+                  X
+                </button>
               </td>
               <td>
                 <button className="lecturebtn">Edit</button>{" "}

@@ -25,6 +25,12 @@ function Lectures() {
   };
   useEffect(() => {}, [lecture]);
 
+  const deleteTableRows = (index) => {
+    const rows = [...lecture];
+    rows.splice(index, 1);
+    setLecture(rows);
+  };
+
   return (
     <>
       <Navbar />
@@ -37,7 +43,7 @@ function Lectures() {
       )}
 
       <PrimaryButton text="Add New Lecture" handleClick={handleClick} />
-      <Table lecture={lecture} />
+      <Table lecture={lecture} deleteTableRows={deleteTableRows} />
     </>
   );
 }

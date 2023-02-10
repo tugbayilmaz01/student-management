@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, onChange } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import React from "react";
@@ -43,6 +43,12 @@ function LectureEditModal(props) {
                   value={editlecture.lectureID}
                   name="LectureID"
                   placeholder="CENG1907"
+                  onChange={(event) =>
+                    seteditlecture({
+                      ...props.lecture,
+                      lectureID: event.target.value,
+                    })
+                  }
                 />
               </label>
 
@@ -55,6 +61,12 @@ function LectureEditModal(props) {
                   value={editlecture.lecturename}
                   name="Lecture Name"
                   placeholder="Web Development"
+                  onChange={(event) =>
+                    seteditlecture({
+                      ...props.lecture,
+                      lecturename: event.target.value,
+                    })
+                  }
                 />
               </label>
             </div>

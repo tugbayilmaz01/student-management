@@ -4,6 +4,11 @@ import Button from "react-bootstrap/Button";
 import React from "react";
 
 function LectureEditModal(props) {
+  const [editlecture, seteditlecture] = useState({
+    lecturename: props.lecturename,
+    lectureID: props.lectureID,
+  });
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -13,7 +18,6 @@ function LectureEditModal(props) {
     };
 
     handleNewLecture(lectureofstudents);
-    window.location.reload();
   };
 
   const handleNewLecture = (lectureofstudents) => {

@@ -20,14 +20,6 @@ const Table = (props) => {
 
   return (
     <>
-      {editmodalOpen && (
-        <LectureEditModal
-          handleClose={props.handleClose}
-          setLecture={props.setLecture}
-          lecture={props.lecture}
-        />
-      )}
-
       <table className="table">
         <thead>
           <tr>
@@ -39,6 +31,13 @@ const Table = (props) => {
           {Object.values(props.lecture).map((item, key) => {
             return (
               <tr key={key}>
+                {editmodalOpen && (
+                  <LectureEditModal
+                    handleClose={props.handleClose}
+                    setLecture={props.setLecture}
+                    lecture={props.lecture}
+                  />
+                )}
                 <td>{item.lectureID}</td>
                 <td>{item.lecturename}</td>
                 <td>

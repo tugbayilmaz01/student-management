@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import React from "react";
 
 function LectureEditModal(props) {
+  console.log(props);
   const [editlecture, seteditlecture] = useState({
     lecturename: props.lecturename,
     lectureID: props.lectureID,
@@ -39,7 +40,8 @@ function LectureEditModal(props) {
                   className="lectureinput"
                   type="text"
                   id="lectureID"
-                  name="lectureID"
+                  value={editlecture.lectureID}
+                  name="LectureID"
                   placeholder="CENG1907"
                 />
               </label>
@@ -50,7 +52,8 @@ function LectureEditModal(props) {
                   className="lectureinput"
                   type="text"
                   id="lecturename"
-                  name="lectureame"
+                  value={editlecture.lecturename}
+                  name="Lecture Name"
                   placeholder="Web Development"
                 />
               </label>

@@ -33,6 +33,8 @@ const Table = (props) => {
               <tr key={key}>
                 {editmodalOpen && (
                   <LectureEditModal
+                    lectureID={item.lectureID}
+                    lecturename={item.lecturename}
                     handleClose={props.handleClose}
                     setLecture={props.setLecture}
                     lecture={props.lecture}
